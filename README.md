@@ -10,7 +10,7 @@
 
 1. Click **Download for Mac** above.
 2. Open the file and drag the app to Applications.
-3. First launch: **right-click the app → Open → Open**. (macOS shows a warning because the app isn't notarized.)
+3. macOS will say it "could not verify" the app. That's expected, since the app isn't notarized. Click **Done**, then open **System Settings → Privacy & Security**, scroll down and click **Open Anyway**. You only do this once.
 4. Allow **Accessibility** when asked. It's how macOS lets an app block keys.
 
 Requires macOS 13+. Works on Apple Silicon and Intel.
