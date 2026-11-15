@@ -2,10 +2,14 @@
 <h1 align="center">Keyboard Cleaner</h1>
 <p align="center">One button locks every key so you can wipe your keyboard without typing a thing.</p>
 
+<p align="center">
+  <a href="https://github.com/jeffreylin1216/KeyboardCleaner/releases/latest/download/KeyboardCleaner.dmg"><img src="https://img.shields.io/badge/%E2%AC%87%20Download%20for%20Mac-6A5CF2?style=for-the-badge" alt="Download for Mac"></a>
+</p>
+
 ## Install
 
-1. Download the latest **KeyboardCleaner.dmg** from [Releases](../../releases/latest).
-2. Open it and drag the app to Applications.
+1. Click **Download for Mac** above.
+2. Open the file and drag the app to Applications.
 3. First launch: **right-click the app → Open → Open**. (macOS shows a warning because the app isn't notarized.)
 4. Allow **Accessibility** when asked. It's how macOS lets an app block keys.
 
