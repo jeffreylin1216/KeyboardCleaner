@@ -35,6 +35,7 @@ final class KeyboardBlocker: ObservableObject {
     }
 
     func openAccessibilitySettings() {
+        requestAccess()   // re-registers the app so it appears in the Accessibility list
         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
             NSWorkspace.shared.open(url)
         }
