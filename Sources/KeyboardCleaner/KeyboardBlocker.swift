@@ -7,7 +7,9 @@ final class KeyboardBlocker: ObservableObject {
     @Published private(set) var remaining = 0
     @Published private(set) var total = 1
     @Published private(set) var hasAccess = AXIsProcessTrusted()
-    @Published var timeout = 120          // seconds until auto-unlock
+    @Published var timeout = UserDefaults.standard.object(forKey: "timeout") as? Int ?? 120 {   // seconds until auto-unlock
+        didSet { UserDefaults.standard.set(timeout, forKey: "timeout") }
+    }
     @Published var errorMessage: String?
 
     fileprivate var tap: CFMachPort?
@@ -16,7 +18,10 @@ final class KeyboardBlocker: ObservableObject {
     private var accessPoll: Timer?
 
     init() {
-        if !hasAccess {
+        if hasAccess {
+            // Already set up: start cleaning as soon as the app opens.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in self?.lock() }
+        } else {
             requestAccess()
             accessPoll = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                 guard let self else { return }
