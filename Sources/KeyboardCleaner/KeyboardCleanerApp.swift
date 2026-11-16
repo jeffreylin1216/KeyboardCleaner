@@ -22,6 +22,9 @@ struct KeyboardCleanerApp: App {
         MenuBarExtra("Keyboard Cleaner", systemImage: blocker.isLocked ? "lock.fill" : "keyboard") {
             Button(blocker.isLocked ? "Unlock Keyboard" : "Lock Keyboard") { blocker.toggle() }
                 .disabled(!blocker.hasAccess)
+            Picker("Auto-unlock after (next time)", selection: $blocker.timeout) {
+                Text("1 min").tag(60); Text("2 min").tag(120); Text("5 min").tag(300); Text("10 min").tag(600)
+            }
             Divider()
             Button("Quit") { NSApplication.shared.terminate(nil) }
         }

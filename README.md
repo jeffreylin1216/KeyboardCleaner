@@ -16,7 +16,7 @@ Requires macOS 13+. Works on Apple Silicon and Intel.
 
 ## Use
 
-Open the app and it starts cleaning right away: every key is locked. Press **Done** to unlock early. It also unlocks by itself when the timer ends or the app quits. Mouse and trackpad keep working. Change the auto-unlock time (1, 2, 5 or 10 min) between sessions.
+Open the app and it starts cleaning right away: every key is locked. Press **Done** to unlock early. When you press Done or the timer ends, the app unlocks and quits, so opening it again starts a fresh clean. Mouse and trackpad keep working. Change the auto-unlock time (1, 2, 5 or 10 min) from the menu bar icon; it applies next time.
 
 ## Build
 

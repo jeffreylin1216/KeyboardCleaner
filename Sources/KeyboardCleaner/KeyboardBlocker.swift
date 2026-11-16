@@ -46,7 +46,13 @@ final class KeyboardBlocker: ObservableObject {
         }
     }
 
-    func toggle() { isLocked ? unlock() : lock() }
+    func toggle() { isLocked ? finish() : lock() }
+
+    /// Cleaning is done: release the keyboard and quit, so the next launch auto-starts again.
+    private func finish() {
+        unlock()
+        NSApp.terminate(nil)
+    }
 
     func lock() {
         guard !isLocked else { return }
@@ -91,7 +97,7 @@ final class KeyboardBlocker: ObservableObject {
                 CGEvent.tapEnable(tap: tap, enable: true)
             }
             self.remaining -= 1
-            if self.remaining <= 0 { self.unlock() }
+            if self.remaining <= 0 { self.finish() }
         }
     }
 
